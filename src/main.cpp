@@ -34,10 +34,10 @@ int main(int argc, char *argv[]) {
 	gl3wInit();
 
 	// ImGuiの初期化
-  ImGui::CreateContext();
-  ImGui::StyleColorsDark();
+	ImGui::CreateContext();
+	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
-  ImGui_ImplOpenGL3_Init();
+	ImGui_ImplOpenGL3_Init();
 	ImGuiIO &io = ImGui::GetIO(); // ここからフォントの追加
 	ImVector<ImWchar> ranges;
 	ImFontGlyphRangesBuilder builder;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 	// builder.AddRanges(io.Fonts->GetGlyphRangesJapanese());
 	builder.BuildRanges(&ranges);
 	io.Fonts->AddFontFromFileTTF("font/mplus-2p-regular.ttf", 16.0f, nullptr, ranges.Data);
-  io.Fonts->AddFontDefault();
+	io.Fonts->AddFontDefault();
 	io.Fonts->Build();
 
 
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// Imguiの初期化
-    ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 		ImGui::StyleColorsLight();
@@ -75,16 +75,16 @@ int main(int argc, char *argv[]) {
 
 		// Imguiの画面更新
 		ImGui::Render();
-  	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 		// ダブルバッファのスワップ
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
-  ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown();
-  ImGui::DestroyContext();
+	ImGui::DestroyContext();
 
 	// GLFWの終了処理
 	glfwTerminate();
