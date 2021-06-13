@@ -3,7 +3,7 @@
 ```
 git clone https://github.com/babiron-modder/imgui_template.git
 ```
-### このファイル攻勢に至るまで(ファイルの準備方法)
+### このファイル構成に至るまで(ファイルの準備方法)
 - mingwは事前に準備
 - python3系も事前に準備
 - glfwはWindows用のものを別で準備する必要がある(32bit)
