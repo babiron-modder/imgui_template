@@ -1,5 +1,5 @@
 
-rm .git
+rd .git
 git init
 rd gl3w /S /Q
 rd imgui /S /Q
