@@ -2,6 +2,9 @@
 ### clone
 ```
 git clone https://github.com/babiron-modder/imgui_template.git
+cd imgui_template
+git submodule init
+git submodule update
 ```
 ### このファイル構成に至るまで(ファイルの準備方法)
 - mingwは事前に準備
