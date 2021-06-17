@@ -73,6 +73,7 @@ $(INCLUDE_FOLDER):
 # libsrcフォルダを生成
 $(LIBSRC_FOLDER):
 	mkdir $(LIBSRC_FOLDER) > NUL 2>&1
+	@echo generate and copy to libsrc...
 	xcopy $(GL3W_FOLDER)\src\gl3w.c $(LIBSRC_FOLDER)
 	xcopy $(IMGUI_FOLDER)\\*.cpp $(LIBSRC_FOLDER)
 	xcopy $(IMGUI_FOLDER)\backends\imgui_impl_glfw.cpp $(LIBSRC_FOLDER)
@@ -82,7 +83,7 @@ $(LIBSRC_FOLDER):
 # libobjフォルダを生成
 $(LIBOBJ_FOLDER): $(LIBSRC_FOLDER) $(INCLUDE_FOLDER)
 	mkdir $(LIBOBJ_FOLDER) > NUL 2>&1
-	@echo ライブラリのコンパイルを開始します...
+	@echo compiling libsrc...
 	g++ -c $(LIBSRC_FOLDER)\\*cpp -I$(INCLUDE_FOLDER)
 	gcc -c $(LIBSRC_FOLDER)\\*.c -I$(INCLUDE_FOLDER)
 	xcopy *.o $(LIBOBJ_FOLDER)
