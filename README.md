@@ -6,6 +6,13 @@ cd imgui_template
 git submodule init
 git submodule update
 ```
+### 実行
+```
+cd gl3w
+python gl3w_gen.py
+cd ../
+mingw32-make run
+```
 ### このファイル構成に至るまで(ファイルの準備方法)
 - mingwは事前に準備
 - python3系も事前に準備
